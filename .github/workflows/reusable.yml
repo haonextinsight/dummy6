@@ -11,13 +11,13 @@ on:
         some-secret:
             required: false
       outputs:
-        result: 
+        outcome: 
             description: The output of deployment opration
             value: ${{jobs.deploy.outputs.outcome}}
 jobs:
     deploy:
         outputs:
-            outcome: ${{steps.set-set-results.outputs.step-result}}
+            outcome: ${{steps.set-results.outputs.step-result}}
         runs-on: ubuntu-latest
         steps:
             - name: Get artifacts
